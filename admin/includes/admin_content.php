@@ -8,9 +8,19 @@
                 <small>Subheading</small>
             </h1>
             <?php
+            // check connection
             if ($database->connection) {
                 // echo "true";
-            } ?>
+            }
+
+            // check if query method is working
+            $sql = "SELECT * FROM users where id=1";
+            $result = $database->query($sql);
+            $user_found = mysqli_fetch_array($result);
+
+            echo $user_found['username']; // rico
+
+            ?>
 
             <ol class="breadcrumb">
                 <li>
