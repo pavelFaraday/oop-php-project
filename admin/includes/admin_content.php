@@ -7,10 +7,9 @@
                 Admin
                 <small>Subheading</small>
             </h1>
-
             <?php
             if ($database->connection) {
-                echo "true";
+                // echo "true";
             } ?>
 
             <ol class="breadcrumb">
