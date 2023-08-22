@@ -9,23 +9,15 @@
             </h1>
             <?php
 
-            // Fetch all Users username
-            $result_set = User::find_all_users();
-            while ($row = mysqli_fetch_array($result_set)) {
-                echo $row['username'] . "<br>";
+            $users = User::find_all_users();
+
+            foreach ($users as $user) {
+                echo "<b>User ID: </b>" . $user->id . "<br>";
+                echo "<b>Username: </b>" . $user->username . "<br>";
+                echo "<b>First name: </b>" . $user->first_name . "<br>";
+                echo "<b>Last name: </b>" . $user->last_name . "<br>";
+                echo "<hr>";
             }
-
-            echo "<hr>";
-
-            // Fetch specific user depending on id
-            $found_user = User::find_user_by_id(1);
-
-            $user = User::instantation($found_user);
-
-            echo "<b>User ID: </b>" . $user->id . "<br>";
-            echo "<b>Username: </b>" . $user->username . "<br>";
-            echo "<b>First name: </b>" . $user->first_name . "<br>";
-            echo "<b>Last name: </b>" . $user->last_name . "<br>";
 
             ?>
 
