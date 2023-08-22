@@ -8,17 +8,13 @@
                 <small>Subheading</small>
             </h1>
             <?php
-            // check connection
-            if ($database->connection) {
-                // echo "true";
+
+            // Fetch all Users username
+            $user = new User();
+            $result_set = $user->find_all_users();
+            while ($row = mysqli_fetch_array($result_set)) {
+                echo $row['username'] . "<br>";
             }
-
-            // check if query method is working
-            $sql = "SELECT * FROM users where id=1";
-            $result = $database->query($sql);
-            $user_found = mysqli_fetch_array($result);
-
-            echo $user_found['username']; // rico
 
             ?>
 
