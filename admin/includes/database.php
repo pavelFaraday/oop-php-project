@@ -16,7 +16,6 @@ class Database
     public function open_db_connection()
     {
         // Connect to DB
-
         $this->connection = new mysqli(DB_Host, DB_USER, DB_PASS, DB_NAME);
 
         if ($this->connection->connect_errno) {
