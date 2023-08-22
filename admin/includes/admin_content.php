@@ -15,9 +15,22 @@
                 echo $row['username'] . "<br>";
             }
 
+            echo "<hr>";
+
             // Fetch specific user depending on id
             $found_user = User::find_user_by_id(1);
-            echo $found_user['username'] . "<br>";
+            $user = new User();
+
+            $user->id = $found_user['id'];
+            $user->username = $found_user['username'];
+            $user->password = $found_user['password'];
+            $user->first_name = $found_user['first_name'];
+            $user->last_name = $found_user['last_name'];
+
+            echo "<b>User ID: </b>" . $user->id . "<br>";
+            echo "<b>Username: </b>" . $user->username . "<br>";
+            echo "<b>First name: </b>" . $user->first_name . "<br>";
+            echo "<b>Last name: </b>" . $user->last_name . "<br>";
 
             ?>
 
