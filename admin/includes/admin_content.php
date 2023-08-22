@@ -9,15 +9,13 @@
             </h1>
             <?php
 
-            $users = User::find_all_users();
+            $found_user = User::find_user_by_id(2);
 
-            foreach ($users as $user) {
-                echo "<b>User ID: </b>" . $user->id . "<br>";
-                echo "<b>Username: </b>" . $user->username . "<br>";
-                echo "<b>First name: </b>" . $user->first_name . "<br>";
-                echo "<b>Last name: </b>" . $user->last_name . "<br>";
-                echo "<hr>";
-            }
+            echo "<b>User ID: </b>" . $found_user->id . "<br>";
+            echo "<b>Username: </b>" . $found_user->username . "<br>";
+            echo "<b>First name: </b>" . $found_user->first_name . "<br>";
+            echo "<b>Last name: </b>" . $found_user->last_name . "<br>";
+            echo "<hr>";
 
             ?>
 
