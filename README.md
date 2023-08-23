@@ -34,32 +34,35 @@ In PHP, the `trim()` function is used to **remove whitespace or other specified 
 
 ## Magic Constants in PHP
 
-```echo __FILE__ . "<br>";
+```
+echo __FILE__ . "<br>";
 echo __LINE__ . "<br>";
 echo __DIR__ . "<br>";
 
 if (file_exists(__DIR__)) {
-echo __DIR__ . " 👈 directory exists." . "<br>";
+    echo __DIR__ . " 👈 directory exists." . "<br>";
 }
 
 // Check if something is file
 if (is_file(__DIR__)) {
-echo __DIR__ . " 👈 is FILE." . "<br>";
+    echo __DIR__ . " 👈 is FILE." . "<br>";
 } else {
-echo "No - is is not file!, it is Directory!" . "<br>";
+    echo "No - is is not file!, it is Directory!" . "<br>";
 }
 
 // Check if something is file
 if (is_file(__FILE__)) {
-echo __FILE__ . " 👈 is FILE." . "<br>";
+    echo __FILE__ . " 👈 is FILE." . "<br>";
 } else {
-echo "No - is is not file!, it is Directory!" . "<br>";
+    echo "No - is is not file!, it is Directory!" . "<br>";
 }
 
 // Check if something is directory
 if (is_dir(__DIR__)) {
-echo __DIR__ . " 👈 is DIRECTORY." . "<br>";
+    echo __DIR__ . " 👈 is DIRECTORY." . "<br>";
 } else {
-echo "No - it is not DIRECTORY!" . "<br>";
+    echo "No - it is not DIRECTORY!" . "<br>";
 }
 ```
+
+---
