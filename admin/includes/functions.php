@@ -13,5 +13,11 @@ function classAutoLoader($class)
         die("File name {$class}.php was not found.");
     }
 };
-
 spl_autoload_register('classAutoLoader');
+
+
+// user redirection on login/logout
+function redirect($location)
+{
+    header("Location: {$location}");
+}
