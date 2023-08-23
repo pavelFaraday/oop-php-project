@@ -1,5 +1,12 @@
 <?php include("includes/header.php"); ?>
 
+<?php
+// if user is not logged in -> redirection
+if (!$session->is_signed_in()) {
+    redirect("login.php");
+}
+?>
+
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
