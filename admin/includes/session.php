@@ -11,7 +11,6 @@ class Session
         $this->check_the_login();
         $this->check_message();
     }
-
     public function message($msg = "")
     {
         if (!empty($msg)) {
@@ -29,14 +28,11 @@ class Session
             $this->message = "";
         }
     }
-
-
     // getter method - for getting private property
     public function is_signed_in()
     {
         return $this->signed_in;
     }
-
     // if user exists in DB -> allow to login
     public function login($user)
     {
@@ -45,14 +41,12 @@ class Session
             $this->signed_in = true;
         }
     }
-
     public function logout()
     {
         unset($_SESSION['user_id']);
         unset($this->user_id);
         $this->signed_in = false;
     }
-
     private function check_the_login()
     {
         if (isset($_SESSION['user_id'])) {
