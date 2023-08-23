@@ -29,3 +29,37 @@ In summary, the main differences between require_once() and include() are:
 ## trim()
 
 In PHP, the `trim()` function is used to **remove whitespace or other specified characters from the beginning and end of a string.** This can be useful for cleaning up user inputs, such as form data, to ensure that no unwanted spaces or characters are present.
+
+---
+
+## Magic Constants in PHP
+
+```echo __FILE__ . "<br>";
+echo __LINE__ . "<br>";
+echo __DIR__ . "<br>";
+
+if (file_exists(__DIR__)) {
+echo __DIR__ . " 👈 directory exists." . "<br>";
+}
+
+// Check if something is file
+if (is_file(__DIR__)) {
+echo __DIR__ . " 👈 is FILE." . "<br>";
+} else {
+echo "No - is is not file!, it is Directory!" . "<br>";
+}
+
+// Check if something is file
+if (is_file(__FILE__)) {
+echo __FILE__ . " 👈 is FILE." . "<br>";
+} else {
+echo "No - is is not file!, it is Directory!" . "<br>";
+}
+
+// Check if something is directory
+if (is_dir(__DIR__)) {
+echo __DIR__ . " 👈 is DIRECTORY." . "<br>";
+} else {
+echo "No - it is not DIRECTORY!" . "<br>";
+}
+```
