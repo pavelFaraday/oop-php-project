@@ -9,7 +9,7 @@
             </h1>
             <?php
 
-            $found_user = User::find_user_by_id(2);
+            $found_user = User::find_user_by_id(3);
 
             echo "<b>User ID: </b>" . $found_user->id . "<br>";
             echo "<b>Username: </b>" . $found_user->username . "<br>";
