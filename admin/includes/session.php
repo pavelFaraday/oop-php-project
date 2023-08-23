@@ -16,13 +16,20 @@ class Session
         return $this->signed_in;
     }
 
-    // id user exists in DB -> allow to login
+    // if user exists in DB -> allow to login
     public function login($user)
     {
         if ($user) {
             $this->user_id = $_SESSION['user_id'] = $user->id;
             $this->signed_in = true;
         }
+    }
+
+    public function logout()
+    {
+        unset($_SESSION['user_id']);
+        unset($this->user_id);
+        $this->signed_in = false;
     }
 
     private function check_the_login()
