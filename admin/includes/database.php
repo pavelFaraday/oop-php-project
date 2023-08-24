@@ -1,5 +1,4 @@
 <?php
-
 require_once("new_config.php");
 
 class Database
@@ -11,7 +10,6 @@ class Database
     {
         $this->open_db_connection();
     }
-
     // 1. open a new connection to the MySQL server
     public function open_db_connection()
     {
@@ -22,7 +20,6 @@ class Database
             die("Database connection failed badly " . $this->connection->connect_error);
         }
     }
-
     // 2. execute SQL queries against a MySQL database
     public function query($sql)
     {
@@ -30,7 +27,6 @@ class Database
         $this->confirm_query($result);
         return $result;
     }
-
     // 3. check SQL query
     private function confirm_query($result)
     {
@@ -38,14 +34,12 @@ class Database
             die("Query Failed " . $this->connection->error);
         }
     }
-
     // 4. escape special characters in a string to make it safe for insertion into a MySQL database using the MySQLi extension
     public function escape_string($string)
     {
         $escaped_string = $this->connection->real_escape_string($string);
         return $escaped_string;
     }
-
     public function the_insert_id()
     {
         return $this->connection->insert_id;

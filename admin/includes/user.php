@@ -2,7 +2,6 @@
 
 class User
 {
-
     public $id;
     public $username;
     public $password;
@@ -13,13 +12,11 @@ class User
     {
         return self::find_this_query("SELECT * FROM users");
     }
-
     public static function find_user_by_id($user_id)
     {
         $the_result_array = self::find_this_query("SELECT * FROM users WHERE id=$user_id LIMIT 1");
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
     }
-
     public static function find_this_query($sql)
     {
         global $database;
@@ -30,7 +27,6 @@ class User
         }
         return $the_object_array;
     }
-
     public static function verify_user($username, $password)
     {
         global $database;
@@ -45,7 +41,6 @@ class User
         $the_result_array = self::find_this_query($sql);
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
     }
-
     public static function instantation($the_record)
     {
         $the_object = new self;
@@ -57,7 +52,6 @@ class User
         }
         return $the_object;
     }
-
     private function has_the_attribute($the_attribute)
     {
         // Get all the properties of the given object (User)
@@ -65,5 +59,23 @@ class User
 
         // check if array given key ($the_attribute) exists in current array ($object_properties)
         return array_key_exists($the_attribute, $object_properties);
+    }
+
+    public function create()
+    {
+        global $database;
+
+        $sql = "INSERT INTO users (username, password, first_name, last_name)";
+        $sql .= "VALUES ('";
+        $sql .= $database->escape_string($this->username) . "', '";
+        $sql .= $database->escape_string($this->username) . "', '";
+        $sql .= $database->escape_string($this->username) . "', '";
+        $sql .= $database->escape_string($this->username) . "')";
+
+        if ($database->query($sql)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
