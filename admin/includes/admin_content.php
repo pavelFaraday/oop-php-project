@@ -18,25 +18,30 @@
             echo "<hr>";
 
             // Test if new user is INSERTed into DB
-            $user = new User();
+            /* $user = new User();
             $user->username = "Test second Username";
             $user->password = "Test second password";
             $user->first_name = "Test second Firstname";
             $user->last_name = "Test second Lastname";
-            $user->create();
+            $user->create(); */
 
             // Test user UPDATE query
-            $user = User::find_user_by_id(18);
-            $user->last_name = "Jovanni";
+            $user = User::find_user_by_id(62);
+            $user->last_name = "Fibonacci";
             $user->save();
 
             // Test SAVE method
-            $user->username = "Ludovico";
-            $user->save();
+            /*  $user->username = "Ludovico";
+            $user->save(); */
 
             // DELETE user FROM DB
-            $user = User::find_user_by_id(57);
-            $user->delete();
+            /* $user = User::find_user_by_id(59);
+            $user->delete(); */
+
+            // Create/INSERT new User in DB
+            /*  $user = new User();
+            $user->username = "Tralivali";
+            $user->save(); */
             ?>
 
             <ol class="breadcrumb">
