@@ -73,7 +73,7 @@ class User
         $sql .= $database->escape_string($this->username) . "')";
 
         if ($database->query($sql)) {
-            return true;
+            $this->id = $database->insert_id();
         } else {
             return false;
         }

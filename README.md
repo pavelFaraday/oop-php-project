@@ -74,3 +74,9 @@ if (is_dir(__DIR__)) {
 ![file upload errors](slides/file_upload_errors.png)
 
 ---
+
+## `mysqli_insert_id($connection)`
+
+Returns the value generated for an AUTO_INCREMENT column by the last query.
+
+---
