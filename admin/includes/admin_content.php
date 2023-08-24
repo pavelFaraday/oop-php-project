@@ -30,6 +30,9 @@
             $user->last_name = "Bartolio";
             $user->update();
 
+            // DELETE user FROM DB
+            $user = User::find_user_by_id(51);
+            $user->delete();
             ?>
 
             <ol class="breadcrumb">

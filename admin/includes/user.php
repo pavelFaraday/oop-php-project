@@ -91,6 +91,7 @@ class User
         $sql .= "first_name = '" . $database->escape_string($this->first_name) . "', ";
         $sql .= "last_name = '" . $database->escape_string($this->last_name) . "' ";
         $sql .= "WHERE id = " . $database->escape_string($this->id);
+
         $database->query($sql);
         return (mysqli_affected_rows($database->connection) == 1) ?  true : false;
     }
@@ -100,10 +101,11 @@ class User
     {
         global $database;
 
-        $sql = "UPDATE users SET ";
-        $sql .= "WHERE id = " . $database->escape_string($this->id);
-        $sql .= "LIMIT 1";
+        $sql = "DELETE FROM users ";
+        $sql .= "WHERE id=" . $database->escape_string($this->id);
+        $sql .= " LIMIT 1";
 
         $database->query($sql);
+        return (mysqli_affected_rows($database->connection) == 1) ?  true : false;
     }
 }
