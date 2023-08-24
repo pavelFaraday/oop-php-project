@@ -80,3 +80,13 @@ if (is_dir(__DIR__)) {
 Returns the value generated for an AUTO_INCREMENT column by the last query.
 
 ---
+
+## `mysqli_affected_rows($database->connection)`
+
+Gets the number of affected rows in a previous `MySQL` operation.
+
+-   An integer greater than zero indicates the number of rows affected or retrieved.
+-   Zero indicates that no records were updated for an `UPDATE` statement, no rows matched the WHERE clause in the query or that no query has yet been executed.
+-   -1 indicates that the query returned an error or that `mysqli_affected_rows was called` for an unbuffered `SELECT` query.
+
+---
