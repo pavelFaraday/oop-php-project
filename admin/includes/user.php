@@ -61,6 +61,12 @@ class User
         return array_key_exists($the_attribute, $object_properties);
     }
 
+    // check if user ID exists in DB..
+    public function save()
+    {
+        return isset($this->id) ? $this->update() : $this->create();
+    }
+
     // INSERT new User in DB
     public function create()
     {

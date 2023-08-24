@@ -27,11 +27,15 @@
 
             // Test user UPDATE query
             $user = User::find_user_by_id(18);
-            $user->last_name = "Bartolio";
-            $user->update();
+            $user->last_name = "Jovanni";
+            $user->save();
+
+            // Test SAVE method
+            $user->username = "Ludovico";
+            $user->save();
 
             // DELETE user FROM DB
-            $user = User::find_user_by_id(51);
+            $user = User::find_user_by_id(57);
             $user->delete();
             ?>
 

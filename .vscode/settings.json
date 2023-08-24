@@ -1,3 +1,4 @@
 {
-	"cSpell.enableFiletypes": ["!php"]
+	"cSpell.enableFiletypes": ["!php"],
+	"editor.minimap.scale": 2
 }
