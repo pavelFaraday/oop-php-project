@@ -66,3 +66,9 @@ if (is_dir(__DIR__)) {
 ```
 
 ---
+
+`$_FILES` is a PHP superglobal variable that is used to retrieve information about uploaded files in a web application. When a user submits a form that includes a file upload input field, the data about the uploaded file is made available in the `$_FILES` array. This array contains several pieces of information about the uploaded file, including its name, type, temporary location, error status, and size.
+
+![uploaded file structure](slides/uploaded-file-structure.png)
+
+---
