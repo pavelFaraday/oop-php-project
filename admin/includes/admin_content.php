@@ -17,16 +17,18 @@
             echo "<b>Last name: </b>" . $found_user->last_name . "<br>";
             echo "<hr>";
 
-            // Test if new user is inserted into DB
+            // Test if new user is INSERTed into DB
             $user = new User();
             $user->username = "Test second Username";
             $user->password = "Test second password";
             $user->first_name = "Test second Firstname";
             $user->last_name = "Test second Lastname";
-
             $user->create();
 
-
+            // Test user UPDATE query
+            $user = User::find_user_by_id(18);
+            $user->last_name = "Bartolio";
+            $user->update();
 
             ?>
 
