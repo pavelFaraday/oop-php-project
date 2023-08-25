@@ -156,3 +156,11 @@ Array
 ```
 
 ---
+
+## `property_exists($object_or_class, $property)`
+
+EXPLANATION: property_exists — Checks if the object or class has a specific property
+
+STRUCTURE: property_exists(object|string $object_or_class, string $property): bool
+
+---

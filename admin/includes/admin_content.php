@@ -10,25 +10,25 @@
             <?php
 
             // test if user is pulled from DB
-            $found_user = User::find_user_by_id(3);
+            /* $found_user = User::find_user_by_id(3);
             echo "<b>User ID: </b>" . $found_user->id . "<br>";
             echo "<b>Username: </b>" . $found_user->username . "<br>";
             echo "<b>First name: </b>" . $found_user->first_name . "<br>";
             echo "<b>Last name: </b>" . $found_user->last_name . "<br>";
-            echo "<hr>";
+            echo "<hr>"; */
 
             // Test if new user is INSERTed into DB
-            /* $user = new User();
-            $user->username = "Test second Username";
-            $user->password = "Test second password";
-            $user->first_name = "Test second Firstname";
-            $user->last_name = "Test second Lastname";
-            $user->create(); */
+            $user = new User();
+            $user->username = "uuu";
+            $user->password = "ppp";
+            $user->first_name = "fff";
+            $user->last_name = "lll";
+            $user->create();
 
             // Test user UPDATE query
-            $user = User::find_user_by_id(62);
+            /*  $user = User::find_user_by_id(62);
             $user->last_name = "Fibonacci";
-            $user->save();
+            $user->save(); */
 
             // Test SAVE method
             /*  $user->username = "Ludovico";
