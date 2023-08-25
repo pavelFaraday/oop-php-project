@@ -18,17 +18,20 @@
             echo "<hr>"; */
 
             // Test if new user is INSERTed into DB
-            $user = new User();
+            /*   $user = new User();
             $user->username = "uuu";
             $user->password = "ppp";
             $user->first_name = "fff";
             $user->last_name = "lll";
-            $user->create();
+            $user->create(); */
 
             // Test user UPDATE query
-            /*  $user = User::find_user_by_id(62);
-            $user->last_name = "Fibonacci";
-            $user->save(); */
+            $user = User::find_user_by_id(77);
+            $user->username = "P";
+            $user->password = "H";
+            $user->first_name = "P";
+            $user->last_name = "❤️";
+            $user->save();
 
             // Test SAVE method
             /*  $user->username = "Ludovico";
