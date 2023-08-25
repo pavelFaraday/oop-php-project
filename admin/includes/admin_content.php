@@ -10,7 +10,7 @@
             <?php
 
             // test if user is pulled from DB
-            /* $found_user = User::find_user_by_id(3);
+            /* $found_user = User::find_by_id(3);
             echo "<b>User ID: </b>" . $found_user->id . "<br>";
             echo "<b>Username: </b>" . $found_user->username . "<br>";
             echo "<b>First name: </b>" . $found_user->first_name . "<br>";
@@ -26,7 +26,7 @@
             $user->create();
 
             // Test user UPDATE query
-            $user = User::find_user_by_id(77);
+            $user = User::find_by_id(77);
             $user->username = "PHP";
             $user->password = "H";
             $user->first_name = "P";
@@ -38,7 +38,7 @@
             $user->save(); */
 
             // DELETE user FROM DB
-            /* $user = User::find_user_by_id(59);
+            /* $user = User::find_by_id(59);
             $user->delete(); */
 
             // Create/INSERT new User in DB
