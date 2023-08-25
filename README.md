@@ -90,3 +90,69 @@ Gets the number of affected rows in a previous `MySQL` operation.
 -   -1 indicates that the query returned an error or that `mysqli_affected_rows was called` for an unbuffered `SELECT` query.
 
 ---
+
+## `get_object_vars(object_name)`
+
+Get all the properties of the given object
+
+---
+
+## `implode()`
+
+EXPLANATION: Join array elements with a string;
+STRUCTURE: `implode(string $separator, array $array)`
+
+```
+$array = ['lastname', 'email', 'phone'];
+var_dump(implode(",", $array)); // string(20) "lastname,email,phone"
+```
+
+---
+
+## `array_keys(array $array)`
+
+EXPLANATION: array_keys — Return all the keys or a subset of the keys of an array
+STRUCTURE: array_keys(array $array)
+
+```
+// Example 1
+$array = array(0 => 100, "color" => "red");
+print_r(array_keys($array));
+
+Array
+(
+    [0] => 0
+    [1] => color
+)
+
+// Example 2
+$array = array("blue", "red", "green", "blue", "blue");
+print_r(array_keys($array, "blue"));
+
+Array
+(
+    [0] => 0
+    [1] => 3
+    [2] => 4
+)
+```
+
+---
+
+## `array_values(array $array)`
+
+EXPLANATION: array_values — Return all the values of an array
+STRUCTURE: array_values(array $array)
+
+```
+$array = array("size" => "XL", "color" => "gold");
+print_r(array_values($array));
+
+Array
+(
+    [0] => XL
+    [1] => gold
+)
+```
+
+---
