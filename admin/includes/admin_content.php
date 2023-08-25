@@ -26,7 +26,7 @@
             $user->create();
 
             // Test user UPDATE query
-            $user = User::find_by_id(77);
+            $user = User::find_by_id(79);
             $user->username = "PHP";
             $user->password = "H";
             $user->first_name = "P";

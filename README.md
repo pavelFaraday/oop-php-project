@@ -99,8 +99,8 @@ Get all the properties of the given object
 
 ## `implode()`
 
-EXPLANATION: Join array elements with a string;
-STRUCTURE: `implode(string $separator, array $array)`
+-   EXPLANATION: Join array elements with a string;
+-   STRUCTURE: `implode(string $separator, array $array)`
 
 ```
 $array = ['lastname', 'email', 'phone'];
@@ -111,8 +111,8 @@ var_dump(implode(",", $array)); // string(20) "lastname,email,phone"
 
 ## `array_keys(array $array)`
 
-EXPLANATION: array_keys — Return all the keys or a subset of the keys of an array
-STRUCTURE: array_keys(array $array)
+-   EXPLANATION: array_keys — Return all the keys or a subset of the keys of an array
+-   STRUCTURE: array_keys(array $array)
 
 ```
 // Example 1
@@ -141,8 +141,8 @@ Array
 
 ## `array_values(array $array)`
 
-EXPLANATION: array_values — Return all the values of an array
-STRUCTURE: array_values(array $array)
+-   EXPLANATION: array_values — Return all the values of an array
+-   STRUCTURE: array_values(array $array)
 
 ```
 $array = array("size" => "XL", "color" => "gold");
@@ -159,8 +159,30 @@ Array
 
 ## `property_exists($object_or_class, $property)`
 
-EXPLANATION: property_exists — Checks if the object or class has a specific property
+-   EXPLANATION: property_exists — Checks if the object or class has a specific property
+-   STRUCTURE: property_exists(object|string $object_or_class, string $property): bool
 
-STRUCTURE: property_exists(object|string $object_or_class, string $property): bool
+---
+
+## `get_called_class()`
+
+Gets the name of the class the static method is called in.
+
+-   PARAMETERS: This function has no parameters.
+-   RETURN VALUES: Returns the class name.
+
+```
+class foo {
+    static public function test() {
+        var_dump(get_called_class());
+    }
+}
+
+class bar extends foo {
+}
+
+foo::test(); // "foo"
+bar::test(); // "bar"
+```
 
 ---
