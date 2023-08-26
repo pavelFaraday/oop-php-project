@@ -10,12 +10,12 @@
             <?php
 
             // test if user is pulled from DB
-            $found_user = User::find_by_id(3);
+            /* $found_user = User::find_by_id(3);
             echo "<b>User ID: </b>" . $found_user->id . "<br>";
             echo "<b>Username: </b>" . $found_user->username . "<br>";
             echo "<b>First name: </b>" . $found_user->first_name . "<br>";
             echo "<b>Last name: </b>" . $found_user->last_name . "<br>";
-            echo "<hr>";
+            echo "<hr>"; */
 
             // Test if new user is INSERTed into DB
             /* $user = new User();
@@ -45,7 +45,31 @@
             /*  $user = new User();
             $user->username = "Tralivali";
             $user->save(); */
+
+
+            /* $photos = Photo::find_all();
+            foreach ($photos as $photo) {
+                echo "<b>Photo Title: </b>" .  $photo->title;
+            } */
+
+            // Test if new Photo is INSERTed into DB
+            $photo = new Photo();
+            $photo->title = "Zebra is sitting on tree";
+            $photo->description = "This is photo from Africa";
+            $photo->filename = "Zebra.png";
+            $photo->type = "image";
+            $photo->size = 12;
+
+            $photo->create();
+
+
+
+
+
             ?>
+
+
+
 
             <ol class="breadcrumb">
                 <li>
