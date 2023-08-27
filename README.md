@@ -186,3 +186,23 @@ bar::test(); // "bar"
 ```
 
 ---
+
+## `defined()`
+
+-   EXPLANATION: Checks whether a given named constant exists
+-   STRUCTURE: `defined(string $constant_name): bool`
+
+```
+if (defined('TEST')) {
+    echo TEST;
+}
+```
+
+## `define()`
+
+-   **EXPLANATION:** Defines a named constant
+-   **STRUCTURE:** `define(string $constant_name, mixed $value, bool $case_insensitive = false)`
+-   **Parameters:**
+    constant*name: The name of the constant.
+    value: The value of the constant.
+    case_insensitive: If set to true, the constant will be defined case-insensitive. \_The default behavior is case-sensitive;*
