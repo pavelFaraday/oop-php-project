@@ -53,14 +53,18 @@
             } */
 
             // Test if new Photo is INSERTed into DB
-            $photo = new Photo();
+            /* $photo = new Photo();
             $photo->title = "Zebra is sitting on tree";
             $photo->description = "This is photo from Africa";
             $photo->filename = "Zebra.png";
             $photo->type = "image";
             $photo->size = 12;
 
-            $photo->create();
+            $photo->create(); */
+
+            echo SITE_ROOT;
+            echo "<br>";
+            echo INCLUDES_PATH;
 
 
 
