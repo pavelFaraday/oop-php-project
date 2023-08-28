@@ -238,9 +238,18 @@ echo "6) ".basename("/");
 
 -   **EXPLANATION:** Moves an uploaded file to a new location
 -   **STRUCTURE:** `move_uploaded_file(string $from, string $to): bool`
-
 -   **Parameters: **
     from: The filename of the uploaded file.
     to: The destination of the moved file.
 
-    ***
+---
+
+## `unlink()`
+
+-   **EXPLANATION:** Deletes filename. An E_WARNING level error will be generated on failure.
+-   **STRUCTURE:** `unlink(string $filename, ?resource $context = null): bool`
+-   **Parameters: **
+    filename: Path to the file.
+    context: A context stream resource.
+
+---
