@@ -62,9 +62,9 @@
 
             $photo->create(); */
 
-            echo SITE_ROOT;
+            /* echo SITE_ROOT;
             echo "<br>";
-            echo INCLUDES_PATH;
+            echo INCLUDES_PATH; */
 
 
 

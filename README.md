@@ -206,3 +206,30 @@ if (defined('TEST')) {
     constant*name: The name of the constant.
     value: The value of the constant.
     case_insensitive: If set to true, the constant will be defined case-insensitive. \_The default behavior is case-sensitive;*
+
+---
+
+## `basename()`
+
+-   **EXPLANATION:** Returns the base/trailing/final name of the given path.
+-   **STRUCTURE:** `basename(string $path, string $suffix = ""): string`
+
+```
+echo "1) ".basename("/etc/sudoers.d", ".d").PHP_EOL;
+echo "2) ".basename("/etc/sudoers.d").PHP_EOL;
+echo "3) ".basename("/etc/passwd").PHP_EOL;
+echo "4) ".basename("/etc/").PHP_EOL;
+echo "5) ".basename(".").PHP_EOL;
+echo "6) ".basename("/");
+
+
+// RESULTS 👇
+1) sudoers
+2) sudoers.d
+3) passwd
+4) etc
+5) .
+6)
+```
+
+---
