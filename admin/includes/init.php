@@ -3,7 +3,7 @@
 // define constant with value "/"
 defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
 
-// define root directory for uploads --> "/Applications/MAMP/htdocs/oop-php-project/gallery"
+// define absolute root directory --> "/Applications/MAMP/htdocs/oop-php-project"
 define('SITE_ROOT', DS . 'Applications' . DS . 'MAMP' . DS . 'htdocs' . DS . 'oop-php-project');
 
 // define 'includes' folder

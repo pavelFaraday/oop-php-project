@@ -4,7 +4,7 @@ class Photo extends Db_object
 {
     protected static $db_table = "photos";
     protected static $db_table_fields = array('photo_id', 'title', 'description', 'filename', 'type', 'size');
-    public $Photo_id;
+    public $photo_id;
     public $title;
     public $description;
     public $filename;
@@ -42,6 +42,26 @@ class Photo extends Db_object
             $this->tmp_path = $file['tmp_path'];
             $this->type = $file['type'];
             $this->size = $file['size'];
+        }
+    }
+
+    public function save()
+    {
+        if ($this->photo_id) {
+            $this->update();
+        } else {
+            if (!empty($this->errors)) { // if there is an error
+                return false;
+            }
+            if (empty($this->filename) || empty($this->tmp_path)) {
+                $this->errors[] = "The file is not available";
+                return false;
+            }
+
+            // /Applications/MAMP/htdocs/oop-php-project/admin/images/cars.jpeg
+            $target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->filename;
+
+            $this->create();
         }
     }
 }
