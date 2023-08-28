@@ -233,3 +233,14 @@ echo "6) ".basename("/");
 ```
 
 ---
+
+## `move_uploaded_file()`
+
+-   **EXPLANATION:** Moves an uploaded file to a new location
+-   **STRUCTURE:** `move_uploaded_file(string $from, string $to): bool`
+
+-   **Parameters: **
+    from: The filename of the uploaded file.
+    to: The destination of the moved file.
+
+    ***

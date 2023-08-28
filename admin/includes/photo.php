@@ -61,7 +61,22 @@ class Photo extends Db_object
             // /Applications/MAMP/htdocs/oop-php-project/admin/images/cars.jpeg
             $target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->filename;
 
-            $this->create();
+            // check f we have the same file in project
+            if (file_exists($target_path)) {
+                $this->errors[] = "The file {$this->filename} already exists";
+                return false;
+            }
+
+            // if file will be saved in new folder, check if create() query was successfull --> then unset $tmp_path (because we don't need it anymore)
+            if (move_uploaded_file($this->tmp_path, $target_path)) {
+                if ($this->create()) {
+                    unset($this->tmp_path);
+                    return true;
+                }
+            } else {
+                $this->errors[] = "The file directory does not have permission!";
+                return false;
+            }
         }
     }
 }
