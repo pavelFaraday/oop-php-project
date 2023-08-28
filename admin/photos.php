@@ -1,5 +1,18 @@
 <?php include("includes/header.php"); ?>
 
+<?php
+// if user is not logged in -> redirection
+if (!$session->is_signed_in()) {
+    redirect("login.php");
+}
+?>
+
+<?php
+
+$photos = Photo::find_all();
+
+?>
+
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -26,20 +39,24 @@
                         <thead>
                             <tr>
                                 <th>Photo</th>
-                                <th>ID</th>
                                 <th>File Name</th>
                                 <th>Title</th>
                                 <th>Size</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+
+                            <?php foreach ($photos as $photo) : ?>
+
+                                <tr>
+                                    <td><img src="https://m.media-amazon.com/images/I/61UH+yeC4HL.jpg" width="62px" alt=""></td>
+                                    <td><?php echo $photo->filename; ?></td>
+                                    <td><?php echo $photo->title; ?></td>
+                                    <td><?php echo $photo->size; ?></td>
+                                </tr>
+
+                            <?php endforeach; ?>
+
                         </tbody>
                     </table> <!--End of Table-->
                 </div>
