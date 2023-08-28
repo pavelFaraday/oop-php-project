@@ -49,7 +49,7 @@ $photos = Photo::find_all();
                             <?php foreach ($photos as $photo) : ?>
 
                                 <tr>
-                                    <td><img src="https://m.media-amazon.com/images/I/61UH+yeC4HL.jpg" width="62px" alt=""></td>
+                                    <td><img src="<?php echo $photo->picture_path(); ?>" width="62px" alt=""></td>
                                     <td><?php echo $photo->filename; ?></td>
                                     <td><?php echo $photo->title; ?></td>
                                     <td><?php echo $photo->size; ?></td>
