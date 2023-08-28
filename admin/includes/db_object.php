@@ -9,7 +9,8 @@ class Db_object
 
     public static function find_by_id($id)
     {
-        $the_result_array = static::find_by_query("SELECT * FROM " . static::$db_table . " WHERE id=$id LIMIT 1");
+        global $database;
+        $the_result_array = static::find_by_query("SELECT * FROM " . static::$db_table . " WHERE id = $id LIMIT 1");
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
     }
 
@@ -84,7 +85,8 @@ class Db_object
         $sql .= "VALUES ('" . implode("','", array_values($properties)) . "')";
 
         if ($database->query($sql)) {
-            $this->id = $database->insert_id();
+            $this->id = $database->the_insert_id();
+            return true;
         } else {
             return false;
         }

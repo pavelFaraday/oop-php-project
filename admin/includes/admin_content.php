@@ -9,8 +9,8 @@
             </h1>
             <?php
 
-            $photo = Photo::find_by_id(9);
-            echo $photo->filename . "<br>";
+            /* $photo = Photo::find_by_id(9);
+            echo $photo->filename . "<br>"; */
 
             // test if user is pulled from DB
             $found_user = User::find_by_id(77);

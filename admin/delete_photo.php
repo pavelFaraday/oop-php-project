@@ -9,7 +9,7 @@ if (!$session->is_signed_in()) {
 
 <?php
 
-if (empty($_GET['photo_id'])) {
+if (empty($_GET['id'])) {
     redirect("../photos.php");
 }
 

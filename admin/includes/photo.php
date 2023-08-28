@@ -16,7 +16,7 @@ class Photo extends Db_object
     public $upload_directory = "images";
     public $errors = array();
     public $upload_errors_array = array(
-        UPLOAD_ERR_OK => "There is Nor ERROR",
+        UPLOAD_ERR_OK => "There is No ERROR",
         UPLOAD_ERR_INI_SIZE => "The uploaded file exceeds the upload max_ filesize directives",
         UPLOAD_ERR_FORM_SIZE => "The uploaded file exceeds the MAX FILE SIZE directive",
         UPLOAD_ERR_PARTIAL => "The uploaded file was only partially uploaded.",
@@ -54,6 +54,7 @@ class Photo extends Db_object
         if ($this->id) {
             $this->update();
         } else {
+            echo $this->id;
             if (!empty($this->errors)) { // if there is an error
                 return false;
             }
