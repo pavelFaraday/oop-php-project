@@ -4,6 +4,7 @@ class Photo extends Db_object
 {
     protected static $db_table = "photos";
     protected static $db_table_fields = array('id', 'title', 'description', 'filename', 'type', 'size');
+    protected static $insert_photo_table = array('title', 'description', 'filename', 'type', 'size');
     public $title;
     public $description;
     public $filename;
@@ -24,29 +25,6 @@ class Photo extends Db_object
         UPLOAD_ERR_CANT_WRITE => "Failed to write file to disk.",
         UPLOAD_ERR_EXTENSION => "A PHP extension stopped the file upload."
     );
-
-
-    // ------- 
-    public function create_photo()
-    {
-        global $database;
-
-        $sql = "INSERT INTO photos (`title`, `description`, `filename`, `type`, `size`)";
-        $sql .= "VALUES ('";
-        $sql .= $database->escape_string($this->title) . "', '";
-        $sql .= $database->escape_string($this->description) . "', '";
-        $sql .= $database->escape_string($this->filename) . "', '";
-        $sql .= $database->escape_string($this->type) . "', '";
-        $sql .= $database->escape_string($this->size) . "')";
-
-        if ($database->query($sql)) {
-            $this->id = $database->the_insert_id();
-            return true;
-        } else {
-            return false;
-        }
-    }
-    // ------- 
 
     // passing -> $_FILES['uploaded_file'] as an argument
     public function set_file($file)

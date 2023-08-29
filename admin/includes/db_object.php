@@ -125,4 +125,50 @@ class Db_object
         $database->query($sql);
         return (mysqli_affected_rows($database->connection) == 1) ?  true : false;
     }
+
+
+    /* -------------------------------------------------------------------------- */
+    /*                                CREATE PHOTO                                */
+    /* -------------------------------------------------------------------------- */
+
+    protected function properties_photo()
+    {
+        $properties_photo = array();
+        foreach (static::$insert_photo_table as $db_field_photo) {
+            if (property_exists($this, $db_field_photo)) {
+                $properties_photo[$db_field_photo] = $this->$db_field_photo;
+            }
+        }
+        return $properties_photo;
+    }
+
+    protected function clean_properties_photo()
+    {
+        global $database;
+        $clean_properties_photo = array();
+
+        foreach ($this->properties_photo() as $key => $value) {
+            $clean_properties_photo[$key] = $database->escape_string($value);
+        }
+        return $clean_properties_photo;
+    }
+    public function create_photo()
+    {
+        global $database;
+        $properties_photo = $this->clean_properties_photo();
+
+        $sql = "INSERT INTO " . static::$db_table . "(" . implode(",", array_keys($properties_photo)) . ")";
+        $sql .= "VALUES ('" . implode("','", array_values($properties_photo)) . "')";
+
+        if ($database->query($sql)) {
+            $this->id = $database->the_insert_id();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /*                                CREATE PHOTO                                */
+    /* -------------------------------------------------------------------------- */
 }
