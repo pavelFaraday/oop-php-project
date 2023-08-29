@@ -65,8 +65,8 @@ if (empty($_GET['id'])) {
                             <input type="text" name="alternate_text" class="form-control" value="<?php echo $photo->alternate_text; ?>">
                         </div>
                         <div class="form-group">
-                            <label for="caption">Description</label>
-                            <textarea name="description" id="" cols="30" rows="10" class="form-control"><?php echo $photo->description; ?></textarea>
+                            <label for="summernote">Description</label>
+                            <textarea name="description" id="summernote" cols="30" rows="10" class="form-control"><?php echo $photo->description; ?></textarea>
                         </div>
                     </div>
 
