@@ -9,15 +9,17 @@ if (!$session->is_signed_in()) {
 
 <?php
 
-// $user = user::find_by_id($_GET['id']);
-// if (isset($_POST['update'])) {
-//     if ($user) {
-//         $user->title = $_POST['title'];
-//         $user->caption = $_POST['caption'];
-//         $user->alternate_text = $_POST['alternate_text'];
-//         $user->description = $_POST['description'];
-//     }
-// }
+//$user = user::find_by_id($_GET['id']);
+if (isset($_POST['create'])) {
+
+    echo "Hello";
+    /*  if ($user) {
+        $user->title = $_POST['title'];
+        $user->caption = $_POST['caption'];
+        $user->alternate_text = $_POST['alternate_text'];
+        $user->description = $_POST['description'];
+    } */
+}
 
 
 ?>
@@ -44,7 +46,7 @@ if (!$session->is_signed_in()) {
                 </h1>
 
                 <form action="" method="post" enctype="multipart/form-data">
-                    <div class="col-md-8">
+                    <div class="col-md-6 col-md-offset-3">
                         <div class="form-group">
                             <label for="username">Username</label>
                             <input type="text" name="username" class="form-control">
@@ -61,6 +63,12 @@ if (!$session->is_signed_in()) {
                             <label for="password">Password</label>
                             <input type="text" name="password" class="form-control">
                         </div>
+
+                        <div class=" form-group">
+                            <input type="submit" name="create" class="btn btn-primary pull-right">
+                        </div>
+
+
                     </div>
                 </form>
 
