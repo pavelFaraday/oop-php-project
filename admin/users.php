@@ -52,7 +52,7 @@ $users = User::find_all();
                                 <tr>
                                     <td><?php echo $user->id; ?></td>
                                     <td>
-                                        <img src="<?php echo $user->user_image; ?>" width="100px" alt="">
+                                        <img src="<?php echo $user->image_path_and_placeholder(); ?>" width="50px" alt="">
                                     </td>
                                     <td><?php echo $user->username; ?>
                                         <div class="action_links">
