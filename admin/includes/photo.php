@@ -4,7 +4,6 @@ class Photo extends Db_object
 {
     protected static $db_table = "photos";
     protected static $db_table_fields = array('id', 'title', 'description', 'filename', 'type', 'size');
-    public $id;
     public $title;
     public $description;
     public $filename;
@@ -25,6 +24,29 @@ class Photo extends Db_object
         UPLOAD_ERR_CANT_WRITE => "Failed to write file to disk.",
         UPLOAD_ERR_EXTENSION => "A PHP extension stopped the file upload."
     );
+
+
+    // ------- 
+    public function create_photo()
+    {
+        global $database;
+
+        $sql = "INSERT INTO photos (`title`, `description`, `filename`, `type`, `size`)";
+        $sql .= "VALUES ('";
+        $sql .= $database->escape_string($this->title) . "', '";
+        $sql .= $database->escape_string($this->description) . "', '";
+        $sql .= $database->escape_string($this->filename) . "', '";
+        $sql .= $database->escape_string($this->type) . "', '";
+        $sql .= $database->escape_string($this->size) . "')";
+
+        if ($database->query($sql)) {
+            $this->id = $database->the_insert_id();
+            return true;
+        } else {
+            return false;
+        }
+    }
+    // ------- 
 
     // passing -> $_FILES['uploaded_file'] as an argument
     public function set_file($file)
@@ -74,7 +96,7 @@ class Photo extends Db_object
 
             // if file will be saved in new folder, check if create() query was successfull --> then unset $tmp_path (because we don't need it anymore)
             if (move_uploaded_file($this->tmp_path, $target_path)) {
-                if ($this->create()) {
+                if ($this->create_photo()) {
                     unset($this->tmp_path);
                     return true;
                 }

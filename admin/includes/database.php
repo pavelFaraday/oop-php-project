@@ -45,10 +45,10 @@ class Database
         return $this->connection->insert_id;
     }
 
-    /*     public function insert_id()
+    public function insert_id()
     {
         return mysqli_insert_id($this->connection);
-    } */
+    }
 }
 
 $database = new Database();

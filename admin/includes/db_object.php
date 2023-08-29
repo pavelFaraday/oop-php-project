@@ -2,6 +2,9 @@
 
 class Db_object
 {
+
+    public $id;
+
     public static function find_all()
     {
         return static::find_by_query("SELECT * FROM " . static::$db_table . " ");
@@ -9,8 +12,7 @@ class Db_object
 
     public static function find_by_id($id)
     {
-        global $database;
-        $the_result_array = static::find_by_query("SELECT * FROM " . static::$db_table . " WHERE id = $id LIMIT 1");
+        $the_result_array = static::find_by_query("SELECT * FROM " . static::$db_table . " WHERE id=$id LIMIT 1");
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
     }
 
@@ -86,11 +88,11 @@ class Db_object
 
         if ($database->query($sql)) {
             $this->id = $database->the_insert_id();
-            return true;
         } else {
             return false;
         }
     }
+
 
     // UPDATE User in DB
     public function update()
