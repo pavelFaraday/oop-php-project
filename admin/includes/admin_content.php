@@ -13,7 +13,7 @@
             echo $photo->filename . "<br>"; */
 
             // test if user is pulled from DB
-            $found_user = User::find_by_id(77);
+            $found_user = User::find_by_id(3);
             echo "<b>User ID: </b>" . $found_user->id . "<br>";
             echo "<b>Username: </b>" . $found_user->username . "<br>";
             echo "<b>First name: </b>" . $found_user->first_name . "<br>";
