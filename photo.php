@@ -60,7 +60,6 @@ $comments = Comment::find_the_comments($photo->id);
     <!-- Post Content -->
     <p class="lead"><?php echo $photo->caption; ?></p>
     <p><?php echo $photo->description; ?></p>
-
     <hr>
 
     <!-- -- Blog Comments -- -->
@@ -99,17 +98,9 @@ $comments = Comment::find_the_comments($photo->id);
 </div>
 <!-- Blog Sidebar Widgets Column -->
 
-
-
-
 <!-- Blog Sidebar Widgets Column -->
 <div class="col-md-4">
-
-
     <?php include("includes/sidebar.php"); ?>
-
-
-
 </div>
 <!-- /.row -->
 
