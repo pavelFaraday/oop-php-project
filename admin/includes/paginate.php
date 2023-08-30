@@ -31,4 +31,19 @@ class Paginate
     {
         return ceil($this->items_total_count / $this->items_per_page);
     }
+
+    public function has_previous()
+    {
+        return $this->previous() >= 1 ? true : false;
+    }
+
+    public function has_next()
+    {
+        return $this->next() <= $this->page_total() ? true : false;
+    }
+
+    public function offset()
+    {
+        return ($this->current_page - 1) * $this->items_per_page;
+    }
 }
