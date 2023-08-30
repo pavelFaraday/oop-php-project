@@ -52,9 +52,9 @@ $comments = Comment::find_all();
                                     <td><?php echo $comment->id; ?></td>
 
                                     <td><?php echo $comment->author; ?>
-                                        <!-- <div class="action_links">
+                                        <div class="action_links">
                                             <a href="delete_comment.php?id=<?php echo $comment->id; ?>">Delete</a>
-                                        </div> -->
+                                        </div>
                                     </td>
 
 
