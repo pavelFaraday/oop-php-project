@@ -170,6 +170,12 @@
                     </div>
                 </div>
             </div> <!--First Row-->
+
+
+            <!-- Google Charts -->
+            <div class="row">
+                <div id="piechart" style="width: 900px; height: 500px;"></div>
+            </div>
         </div>
     </div>
     <!-- /.row -->
