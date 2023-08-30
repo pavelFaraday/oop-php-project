@@ -1,13 +1,11 @@
-<?php include("includes/header.php"); ?>
-
 <?php
+
+include("includes/header.php");
+
 // if user is not logged in -> redirection
 if (!$session->is_signed_in()) {
     redirect("login.php");
 }
-?>
-
-<?php
 
 $comments = Comment::find_all();
 
@@ -45,25 +43,17 @@ $comments = Comment::find_all();
                             </tr>
                         </thead>
                         <tbody>
-
                             <?php foreach ($comments as $comment) : ?>
-
                                 <tr>
                                     <td><?php echo $comment->id; ?></td>
-
                                     <td><?php echo $comment->author; ?>
                                         <div class="action_links">
                                             <a href="delete_comment.php?id=<?php echo $comment->id; ?>">Delete</a>
                                         </div>
                                     </td>
-
-
-
                                     <td><?php echo $comment->body; ?></td>
                                 </tr>
-
                             <?php endforeach; ?>
-
                         </tbody>
                     </table> <!--End of Table-->
                 </div>

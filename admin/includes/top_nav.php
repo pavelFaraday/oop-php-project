@@ -8,8 +8,6 @@
     <a class="navbar-brand" href="../index.php">Home Page</a>
 </div>
 
-
-
 <!-- Top Menu Items -->
 <ul class="nav navbar-right top-nav">
     <li class="dropdown">

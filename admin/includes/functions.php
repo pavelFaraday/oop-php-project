@@ -15,7 +15,6 @@ function classAutoLoader($class)
 };
 spl_autoload_register('classAutoLoader');
 
-
 // user redirection on login/logout
 function redirect($location)
 {

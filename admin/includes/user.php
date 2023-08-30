@@ -1,5 +1,4 @@
 <?php
-
 class User extends Db_object
 {
     protected static $db_table = "users";
