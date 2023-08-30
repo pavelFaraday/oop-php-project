@@ -1,3 +1,4 @@
+<?php require_once("admin/includes/init.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +32,7 @@
 
 
     <!-- Navigation -->
-<?php include("navigation.php"); ?>
+    <?php include("navigation.php"); ?>
 
     <!-- Page Content -->
     <div class="container">
