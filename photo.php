@@ -10,7 +10,6 @@ if (empty($_GET['id'])) {
 
 $photo = Photo::find_by_id($_GET['id']);
 
-
 if (isset($_POST['submit'])) {
     $author = trim($_POST['author']);
     $body = trim($_POST['body']);
@@ -25,6 +24,8 @@ if (isset($_POST['submit'])) {
     $author = "";
     $body = "";
 }
+
+Comment::find_the_comments($photo->id);
 
 ?>
 
